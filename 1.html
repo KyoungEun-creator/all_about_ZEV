@@ -20,6 +20,7 @@
 </head>
 
 <body>
+  <!--
   <input type="button" value="night" onclick="
     document.querySelector('body').style.backgroundColor='black';
     document.querySelector('body').style.color='white';
@@ -28,6 +29,37 @@
     document.querySelector('body').style.backgroundColor='white';
     document.querySelector('body').style.color='black';
   ">
+  -->
+
+  <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      document.querySelector('h1').style.color = 'white';
+      this.value = 'day';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while (i < alist.length) {
+        alist[i].style.color = 'powderblue';
+        i = i+1;
+      }
+    } else {
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      document.querySelector('h1').style.color = 'black';
+      this.value = 'night';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while (i < alist.length) {
+        alist[i].style.color = 'blue';
+        i = i+1;
+      }
+    }
+  ">
+
   <a href="index.html"><h1>Choi Jae-Rim</h1></a>
   <div id="grid">
     <ol>
@@ -40,13 +72,13 @@
       <h2>Career</h2>
       <u>since 2009.01.09</u>
       <ul>
-        <a href="1-1.html"><li>Musical</li></a>
-        <a href="1-2.html"><li>Play</li></a>
-        <a href="1-3.html"><li>Opera</li></a>
-        <a href="1-4.html"><li>TV</li></a>
-        <a href="1-5.html"><li>Concert</li></a>
-        <a href="1-6.html"><li>Radio</li></a>
-        <a href="1-7.html"><li>Youtube</li></a>
+        <li><a href="1-1.html">Musical</a></li>
+        <li><a href="1-2.html">Play</a></li>
+        <li><a href="1-3.html">Opera</a></li>
+        <li><a href="1-4.html">TV</a></li>
+        <li><a href="1-5.html">Concert</a></li>
+        <li><a href="1-6.html">Radio</a></li>
+        <li><a href="1-7.html">Youtube</a></li>
 
       </ul>
     </div>

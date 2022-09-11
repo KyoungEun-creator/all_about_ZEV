@@ -22,6 +22,7 @@
       text-decoration:none;
     }
     h1 {
+      color:black;
       font-size:60px;
       text-align:center;
       border-bottom:1px solid gray;
@@ -39,6 +40,7 @@
 </head>
 
 <body>
+  <!--
   <input type="button" value="night" onclick="
     document.querySelector('body').style.backgroundColor='black';
     document.querySelector('body').style.color='white';
@@ -47,17 +49,60 @@
     document.querySelector('body').style.backgroundColor='white';
     document.querySelector('body').style.color='black';
   ">
+  -->
+  <!--
+  <input id="night_day" type="button" value="night" onclick="
+  if(document.querySelector('#night_day').value === 'night'){
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';
+    document.querySelector('#night_day').value = 'day'
+  } else {
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';
+    document.querySelector('#night_day').value = 'night'
+  }
+  ">
+  -->
+  <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      document.querySelector('h1').style.color = 'white';
+      this.value = 'day';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while (i < alist.length) {
+        alist[i].style.color = 'powderblue';
+        i = i+1;
+      }
+    } else {
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      document.querySelector('h1').style.color = 'black';
+      this.value = 'night';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while (i < alist.length) {
+        alist[i].style.color = 'blue';
+        i = i+1;
+      }
+    }
+  ">
+
   <a href="index.html"><h1>Choi Jae-Rim</h1></a>
 
   <div id="main">
-    <br><br><a href="https://www.zevchoi.com/home" target="_blank" title="배우 최재림 홈페이지">👉 공식홈페이지 바로가기 👈</a> <!--]'_blank'새 창 열기-->
+    <br><br><a href="https://www.zevchoi.com/home" target="_blank" title="배우 최재림 홈페이지">[ 공식홈페이지 바로가기 ]</a> <!--]'_blank'새 창 열기-->
     <br><br><img src="Zev_index.gif" width="300">
     <br><br>date of Birth: <strong>1985.04.29</strong>
 
     <ol>
-      <a href="1.html"><li>Career</li></a>
-      <a href="2.html"><li>Awards</li></a>
-      <a href="3.html"><li>Contact</li></a>
+      <li><a href="1.html">Career</a></li>
+      <li><a href="2.html">Awards</a></li>
+      <li><a href="3.html">Contact</a></li>
     </ol>
   </div>
 
