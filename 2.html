@@ -16,17 +16,14 @@
     </script>
   </p>
 
-  <link rel="stylesheet" href="1-style.css">
-</head>
-
-<body>
-  <input type="button" value="night" onclick="
+  <script>
+  function nightDayHandler(self){
     var target = document.querySelector('body');
-    if(this.value === 'night'){
+    if(self.value === 'night'){
       target.style.backgroundColor = 'black';
       target.style.color = 'white';
       document.querySelector('h1').style.color = 'white';
-      this.value = 'day';
+      self.value = 'day';
 
       var alist = document.querySelectorAll('a');
       var i = 0;
@@ -38,7 +35,7 @@
       target.style.backgroundColor = 'white';
       target.style.color = 'black';
       document.querySelector('h1').style.color = 'black';
-      this.value = 'night';
+      self.value = 'night';
 
       var alist = document.querySelectorAll('a');
       var i = 0;
@@ -47,8 +44,17 @@
         i = i+1;
       }
     }
-  ">
+  }
+  </script>
   
+  <link rel="stylesheet" href="1-style.css">
+</head>
+
+<body>
+  <input type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+
   <a href="index.html"><h1>Choi Jae-Rim</h1></a>
   <div id="grid">
     <ol>
