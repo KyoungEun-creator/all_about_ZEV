@@ -17,32 +17,54 @@
   </p>
 
   <script>
+  var Links = {
+    setColor:function(color){
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while (i < alist.length) {
+        alist[i].style.color = color;
+        i = i+1;
+      }
+    }
+  }
+  var Body = {
+    setColor:function(color){
+      document.querySelector('body').style.color = color;
+    },
+    setBackgroundColor:function(color){
+      document.querySelector('body').style.backgroundColor = color;
+    }
+  }
+  /*function Links.setColor(color){
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while (i < alist.length) {
+      alist[i].style.color = color;
+      i = i+1;
+    }
+  }
+  function Body.setColor(color){
+    document.querySelector('body').style.color = color;
+  }
+  function Body.setBackgroundColor(color){
+    document.querySelector('body').style.backgroundColor = color;
+  }
+  */
   function nightDayHandler(self){
     var target = document.querySelector('body');
     if(self.value === 'night'){
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
       document.querySelector('h1').style.color = 'white';
       self.value = 'day';
+      Body.setBackgroundColor('black');
+      Body.setColor('white');
+      Links.setColor('powderblue');
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while (i < alist.length) {
-        alist[i].style.color = 'powderblue';
-        i = i+1;
-      }
     } else {
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
       document.querySelector('h1').style.color = 'black';
       self.value = 'night';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while (i < alist.length) {
-        alist[i].style.color = 'blue';
-        i = i+1;
-      }
+      Body.setBackgroundColor('white');
+      Body.setColor('black');
+      Links.setColor('blue');
     }
   }
   </script>
@@ -51,17 +73,6 @@
 </head>
 
 <body>
-  <!--
-  <input type="button" value="night" onclick="
-    document.querySelector('body').style.backgroundColor='black';
-    document.querySelector('body').style.color='white';
-  ">
-  <input type="button" value="day" onclick="
-    document.querySelector('body').style.backgroundColor='white';
-    document.querySelector('body').style.color='black';
-  ">
-  -->
-
   <input type="button" value="night" onclick="
     nightDayHandler(this);
   ">
