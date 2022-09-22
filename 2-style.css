@@ -17,11 +17,11 @@ body {
 }
 #grid {
   display:grid;
-  grid-template-columns:150px 1fr;
+  grid-template-columns:180px 1fr;
 }
 #grid #index {
   border-right:1px solid gray;
-  width:100px;
+  width:150px;
   margin:0;
   padding:30px;
 }
